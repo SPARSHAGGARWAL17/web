@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{STATIC_URLS}}style.css">
+    <title>Fraud</title>
+</head>
+<body>
+    <form  method="post">
+        <div class="form">
+            <h1>Fraud detected</h1>
+            <h3>Please Verify Yourself</h3>
+            {% if number%}
+            <p class="number">OTP SENT TO {{number}}</p>
+            {% endif %}
+            <br>
+            <input type="number" name="otp" id="otp" placeholder="OTP">
+            <button type="submit">Verify</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>abc-bank</title>
+        <link rel="stylesheet" href="{{STATIC_URLS}}style.css">
+    </head>
+    <body>
+        <h1>
+            WELCOME TO THE ABC BANK FAMILY!
+        </h1>
+        <div class="login-page">
+            <div class="form">
+                <form class="verification-form" method="POST" action="/path/money/">
+                    {% csrf_token %}
+                    <h1> Balance : Rs. {{ money }} </h1>
+                    <input type="number" name='card' placeholder="Enter Amount"/>
+                    <button>ADD MONEY</button>
+                    <p class="messsage"><a href="/path/logout/">Logout</a></p>
+                </form>
+            </div>
+        </div>       
+    </body>
+</html>

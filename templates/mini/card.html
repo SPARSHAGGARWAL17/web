@@ -1,0 +1,12 @@
+{% extends 'mini/main.html' %}
+
+{% block main %}
+    <form class="verification-form" method="POST" action="/path/verify/">
+        {% csrf_token %}
+        <input type="number" name='card' placeholder="Enter card number"/>
+        <input type="date" name = 'date' placeholder="DD/MM"/>
+        <input type="text" name='cvv' placeholder="CVV"/>
+        <input type="text" name='name' placeholder="Name on the card"/>
+        <button>{{ button }} CARD</button>
+    </form>
+{% endblock %}

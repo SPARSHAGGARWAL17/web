@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>abc-bank</title>
+        <link rel="stylesheet" href="{{STATIC_URLS}}/style.css">
+    </head>
+    <body>
+        <h1>
+            WELCOME TO THE ABC BANK FAMILY!
+        </h1>
+        <div class="login-page">
+            <div class="form">
+                <form class="signup-form" method="POST" action="/path/main/">
+                    {% csrf_token%}
+                    <input type="text" name="name" placeholder="Name"/>
+                    <input type="text" name="lastname" placeholder="Last Name"/>
+                    <input type="email" name="email" placeholder="Enter email"/>
+                    <input type="password" name="password" placeholder="Enter password"/>
+                    <input type='number' name="mobile" placeholder="Enter Mobile"/>
+                    <button type="submit" onclick="register">
+                        CREATE</button>
+                    <p class="messsage">Already Registered? <a href="/path/">Login</a></p>
+                </form>
+            </div>
+        </div>      
+    </body>
+</html>
