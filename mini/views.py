@@ -1,6 +1,6 @@
 
 from django.contrib.auth.models import User
-from django.http import request
+# from django.http import request
 from mysite.settings import STATIC_URL
 from django.shortcuts import redirect, render
 from datetime import datetime

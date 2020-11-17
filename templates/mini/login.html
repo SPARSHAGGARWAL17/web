@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>abc-bank</title>
-        <link rel="stylesheet" href="{{STATIC_URLS}}/style.css">
+        <link rel="stylesheet" href="{{STATIC_URLS}}style.css">
     </head>
     <body>
         <h1>
@@ -9,6 +9,7 @@
         </h1>
         <div class="login-page">
             <div class="form">
+                <p>{{STATIC_URLS}}style.css</p>
                 <form class="login-form" method="POST" action="/path/login/">
                     {% csrf_token%}
                     <input type="email" name="email" placeholder="Enter Email"/>
