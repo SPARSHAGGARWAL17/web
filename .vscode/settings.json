@@ -1,3 +1,11 @@
 {
-    "python.pythonPath": "C:\\Users\\Sparsh\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+    "python.pythonPath": "C:\\Users\\Sparsh\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "cSpell.words": [
+        "gapi",
+        "googleusercontent",
+        "longtitle",
+        "mysite",
+        "onfailure",
+        "signin"
+    ]
 }

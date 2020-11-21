@@ -24,4 +24,5 @@ admin.site.index_title = "Welcome to ABC Bank"
 urlpatterns = [
     path('path/',include('mini.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
 ]

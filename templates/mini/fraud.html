@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{STATIC_URLS}}style.css">
+    <meta name="google-signin-client_id" content="281552384934-qo0m85c1nbv55o973ton8lspgu67vu87.apps.googleusercontent.com">
+    <link rel="stylesheet" href="{{STATIC_URLS}}css/style.css">
     <title>Fraud</title>
 </head>
 <body>
     <form  method="post">
         <div class="form">
-            <h1>Fraud detected</h1>
-            <h3>Please Verify Yourself</h3>
-            {% if number%}
-            <p class="number">OTP SENT TO {{number}}</p>
-            {% endif %}
+            <form action="/path/fraud" method="POST">
+                <!-- <h1>Fraud detected</h1> -->
+                <h1>Please Verify Yourself</h1>
+                <!-- <div id="my-signin2"></div> -->
+                <div class="g-signin2" data-width="300" data-height="50" data-longtitle="true"></div>
+                <script>
+                    function onSuccess(googleUser) {
+                        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                    }
+                    function onFailure(error) {
+                        console.log(error);
+                    }
+                    function renderButton() {
+                        gapi.signin2.render('my-signin2', {
+                            'scope': 'profile email',
+                            'width': 240,
+                            'height': 50,
+                            'longtitle': true,
+                            'theme': 'dark',
+                            'onsuccess': onSuccess,
+                            'onfailure': onFailure
+                        });
+                    }
+                    </script>
+            
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer>
+            </script>
             <br>
-            <input type="number" name="otp" id="otp" placeholder="OTP">
-            <button type="submit">Verify</button>
+        </form>
+            <!-- <input type="number" name="otp" id="otp" placeholder="OTP"> -->
+            <!-- <button type="submit">Verify</button> -->
         </div>
     </form>
 </body>

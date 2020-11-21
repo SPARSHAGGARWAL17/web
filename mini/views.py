@@ -15,6 +15,7 @@ def index(request):
 
 # Create your views here.
 def loginUser(request):
+    # print(contexts)
     if request.method == "POST":
         username = request.POST.get('email')
         password = request.POST.get('password')
@@ -108,8 +109,9 @@ def money(request):
     return render(request, 'mini/money.html', {'STATIC_URLS': STATIC_URL,'money':money})
 
 def fraud(request):
+    print(request)
     print(request.method)
     if fraudNo == 3:
         return render(request,'mini/fraud.html',contexts)
     else:
-        return redirect('/path/',contexts)
+        return render(request,'mini/fraud.html',contexts)
